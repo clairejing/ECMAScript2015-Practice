@@ -319,3 +319,31 @@ Math.imul(Math.pow(2, 32)-1, Math.pow(2, 32) - 2)
 'abcde'.includes('cd');
 'abc'.repeat(3)
 
+Array.from(document.querySelectorAll('*'))
+Array.of(1, 2, 3)
+[0, 0, 0].fill(7, 1)
+[1, 2, 3].find(x => x == 2)
+[1, 2, 3, 4, 5].copyWithin(3, 0)
+['a', 'b', 'c'].entries()
+['a', 'b', 'c'].keys()
+
+//Binary and Octal Literals
+0b111110111 === 503
+0O767 === 503
+
+//Promises
+
+function timeout(duration = 0){
+  return new Promise((resolve, reject) =>{
+    setTimeout(resolve, duration);
+  })
+}
+
+var p = timeout(1000).then(()=>{
+  return timeout(2000);
+}).then(() => {
+  throw new Error('hmm');
+}).catch()(err => {
+  return Promise.all([timeout(100), timeout(200)]);
+})
+
