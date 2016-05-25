@@ -212,3 +212,27 @@ loader.eval("console.log('hello world!');");
 //Directly manipulate module cache
 System.get('jquery');
 System.get('jquery', Module({$: $}));
+
+
+//Map + Set + WeakMap + WeakSet
+
+//Sets
+var s = new Set();
+s.add('hello').add('goodbye').add('hello');
+s.size === 2;
+s.has('hello') === true;
+
+//Maps
+var m = new Map();
+m.set('hello', 42);
+m.set(s, 34);
+m.get(2) == 34;
+
+//Week Maps
+var wm = new WeakMap();
+wm.set(s, { extra: 42});
+wm.size === undefined;
+
+//Weak Sets
+var ws = new WeakSet();
+wa.add({data: 42});
