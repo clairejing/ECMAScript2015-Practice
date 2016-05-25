@@ -45,3 +45,20 @@ class SkinnedMesh extends THREE.Mesh {
     return new THREE.Matrix4();
   }
 }
+
+var obj = {
+  //_proto_
+  _proto_: theProtoObj,
+  //Shorthand for 'handler: handler'
+  handler,
+  //Methods
+  toString(){
+    //Super calls
+    return "d" + super.toString();
+  }
+  //Computed (dynamic) property names
+  ['prop_' + (()=>42)()]:42
+}
+
+
+// https://github.com/lukehoban/es6features
