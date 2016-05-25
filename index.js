@@ -139,5 +139,21 @@ function f(){
       //error, const
       x = "foo";
     }
+    //error, already declared in block
+    let x = "inner";
+  }
+}
+
+//Iterators + For .. of
+
+let fabonacci = {
+  [Symbol.iterator](){
+    let pre = 0, cur = 1;
+    return {
+      next() {
+        [pre, cur] = [cur, pre + cur];
+        return {done: false, value: cur}
+      }
+    }
   }
 }
