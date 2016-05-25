@@ -283,3 +283,39 @@ var MyClass = (function(){
 
 var c = new MyClass('hello');
 c['key'] === undefined;
+
+//Subclassable Built-ins
+
+//Pseudo-code of Array
+class Array{
+  constructor(...args){/*...*/}
+  static [Symbol.create](){
+    //Install special
+    //to magically update 'length'
+  }
+}
+
+class MyArray extends Array{
+  constructor(...args){
+    super(...args);
+  }
+}
+
+var arr = new MyArray();
+arr[1] = 12;
+arr.length == 2;
+
+
+//Math + Number + String + Array + Object APIs
+
+Number.EPSILON
+Number.isInteger(Infinity)
+Number.isNaN("NaN")
+
+Math.acosh(3)
+Math.hypot(3, 4)
+Math.imul(Math.pow(2, 32)-1, Math.pow(2, 32) - 2)
+
+'abcde'.includes('cd');
+'abc'.repeat(3)
+
